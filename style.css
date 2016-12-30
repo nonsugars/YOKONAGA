@@ -1,0 +1,99 @@
+/*ドロップ可能範囲*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* レイアウト */
+html, body{
+	text-align: center;	
+}
+
+header,
+footer,
+main{
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* main */
+
+main * {
+	margin-top: 10px;
+}
+
+/* footer */
+
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;	
+	color: #FFF;
+	background: #222;
+}
+
+footer a{
+	color: #FFF;
+}
+
+/** {border: 1px solid #ddd;}*/
+
+/* 画像が見易くなるように高さを制限 */
+
+.preview{
+	padding: 10px 20px;
+	background: #ededed;
+	border: 1px solid #ddd;
+}
+
+/* 描写部分 */
+#photos{
+	background-color: #222;
+	border: 1px solid #000;
+}
+
+label{
+    display: inline-block;
+    width: calc(30% - 5px);
+    box-sizing: content-box;
+}
+
+#download{
+	display: block;
+}
+
+#download img{
+	width: 1.6em;
+}
+
+/* ボタン */
+
+.btn{
+	cursor: pointer;
+	padding: 6px 12px;
+	-webkit-border-radius: 6px;
+	        border-radius: 6px;
+}
+
+.btn-border{
+	background: #FFF;
+    border: 1px solid #2196f3;
+}
+
+.btn-border:hover{
+	background: #fff9c4;
+	border: 1px solid #1e88e5;
+}
+
+.btn-blue{
+	color: #FFF;
+	background: #42a5f5;
+}
+
+.btn-blue:hover{
+	background: #64B5F6;
+}
