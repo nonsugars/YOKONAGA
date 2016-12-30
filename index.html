@@ -12,20 +12,25 @@
             <h1>MAITSUKI</h1>
         </header>
         <main>
-            <div class="preview">
-                <canvas id="photos"></canvas>
-            </div>
-            <form name="configForm">
-                <label class="btn btn-border">S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
-                <label class="btn btn-border">M<input type="radio" name="imageSize" value="M"/></label>
-                <label class="btn btn-border">L<input type="radio" name="imageSize" value="L"/></label>
-            </form>
-            <div>
-                <a id="download" class="btn btn-blue" download>
-                    <img src="download.svg" alt="">
-                    <br> Download
-                </a>
-            </div>
+            <section id="firstStep">
+                <p>Drag and drop image files.</p>
+            </section>
+            <section id="secondStep">
+                <div class="preview">
+                    <canvas id="photos"></canvas>
+                </div>
+                <form name="configForm">
+                    <label class="btn btn-border">S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
+                    <label class="btn btn-border">M<input type="radio" name="imageSize" value="M"/></label>
+                    <label class="btn btn-border">L<input type="radio" name="imageSize" value="L"/></label>
+                </form>
+                <div>
+                    <a id="download" class="btn btn-blue" download>
+                        <img src="download.svg" alt="">
+                        <br> Download
+                    </a>
+                </div>
+            </section>
         </main>
         <footer>
             <address>

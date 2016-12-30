@@ -42,6 +42,12 @@ footer a{
 
 /** {border: 1px solid #ddd;}*/
 
+/* ステップ */
+
+#secondStep {
+    display: none;
+}
+
 /* 画像が見易くなるように高さを制限 */
 
 .preview{

@@ -50,6 +50,7 @@
             image.src = event.target.result;
             images.push(image);
             draw();
+            stepNext();
         }
     }
 
@@ -63,6 +64,11 @@
             context.drawImage(image, posX, 0, width, canvasHeight);
             posX += width;
         });
+    }
+
+    function stepNext() {
+        document.getElementById('firstStep').style.display = 'none';
+        document.getElementById('secondStep').style.display = 'block';
     }
 
     function imageWidth(image, height) {
