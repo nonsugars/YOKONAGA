@@ -1,5 +1,10 @@
 (function() {
-    var canvasHeight = 300;
+    var heights = {
+        S: 600,
+        M: 1000,
+        L: 1800,
+    };
+    var canvasSize = 'M';
     var canvas = document.getElementById('photos');
     var context = canvas.getContext('2d');
     var images = [];
@@ -25,6 +30,16 @@
         downloadButton.addEventListener('click', function(event) {
             downloadButton.href = canvas.toDataURL('image/jpeg');
         });
+
+        document.configForm.imageSize.forEach(function(input) {
+            if (input.checked) {
+                canvasSize = input.value;
+            }
+            input.addEventListener('click', function(event) {
+                canvasSize = event.target.value;
+                draw();
+            });
+        });
     }
 
     function readFile(file) {
@@ -39,6 +54,7 @@
     }
 
     function draw() {
+        var canvasHeight = heights[canvasSize];
         canvas.height = canvasHeight;
         canvas.width = canvasWidth(canvasHeight);
         var posX = 0;

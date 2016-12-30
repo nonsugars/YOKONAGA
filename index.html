@@ -16,7 +16,14 @@
     <body>
         <main>
             <canvas id="photos"></canvas>
-            <a id="download" download>Download</a>
+            <form name="configForm">
+                <label>S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
+                <label>M<input type="radio" name="imageSize" value="M"/></label>
+                <label>L<input type="radio" name="imageSize" value="L"/></label>
+            </form>
+            <div>
+                <a id="download" download>Download</a>
+            </div>
         </main>
         <script src="horizontal-photos.js"></script>
     </body>
