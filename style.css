@@ -9,35 +9,35 @@ html, body {
 
 /* レイアウト */
 html, body{
-	text-align: center;	
+    text-align: center;
 }
 
 header,
 footer,
 main{
-	width: 80%;
-	margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* main */
 
 main * {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 /* footer */
 
 footer{
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	padding: 10px;	
-	color: #FFF;
-	background: #222;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: #FFF;
+    background: #222;
 }
 
 footer a{
-	color: #FFF;
+    color: #FFF;
 }
 
 /** {border: 1px solid #ddd;}*/
@@ -51,15 +51,15 @@ footer a{
 /* 画像が見易くなるように高さを制限 */
 
 .preview{
-	padding: 10px 20px;
-	background: #ededed;
-	border: 1px solid #ddd;
+    padding: 10px 20px;
+    background: #ededed;
+    border: 1px solid #ddd;
 }
 
 /* 描写部分 */
 #photos{
-	background-color: #222;
-	border: 1px solid #000;
+    background-color: #222;
+    border: 1px solid #000;
 }
 
 label{
@@ -69,37 +69,37 @@ label{
 }
 
 #download{
-	display: block;
+    display: block;
 }
 
 #download img{
-	width: 1.6em;
+    width: 1.6em;
 }
 
 /* ボタン */
 
 .btn{
-	cursor: pointer;
-	padding: 6px 12px;
-	-webkit-border-radius: 6px;
-	        border-radius: 6px;
+    cursor: pointer;
+    padding: 6px 12px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
 }
 
 .btn-border{
-	background: #FFF;
+    background: #FFF;
     border: 1px solid #2196f3;
 }
 
 .btn-border:hover{
-	background: #fff9c4;
-	border: 1px solid #1e88e5;
+    background: #fff9c4;
+    border: 1px solid #1e88e5;
 }
 
 .btn-blue{
-	color: #FFF;
-	background: #42a5f5;
+    color: #FFF;
+    background: #42a5f5;
 }
 
 .btn-blue:hover{
-	background: #64B5F6;
+    background: #64B5F6;
 }
