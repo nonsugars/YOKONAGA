@@ -5,7 +5,6 @@
         L: 1800,
     };
     var canvasSize = 'M';
-    var images = [];
 
     function setup() {
         $('body').on('dragover', function(event) {
@@ -39,6 +38,8 @@
             $('#preview img').removeClass('S M L');
             $('#preview img').addClass(canvasSize);
         });
+
+        $('#preview').sortable();
     }
 
     function readFile(file) {
@@ -48,7 +49,6 @@
             var image = new Image();
             image.src = event.target.result;
             image.className = canvasSize;
-            images.push(image);
             $('#preview').append(image);
             stepNext();
         }
@@ -58,8 +58,9 @@
         var canvas = document.createElement('canvas');
         var context = canvas.getContext('2d');
         var canvasHeight = heights[canvasSize];
+        var images = $('#preview').children().toArray();
         canvas.height = canvasHeight;
-        canvas.width = canvasWidth(canvasHeight);
+        canvas.width = canvasWidth(images, canvasHeight);
         var posX = 0;
         images.forEach(function(image) {
             var width = imageWidth(image, canvasHeight);
@@ -78,7 +79,7 @@
         return (height / image.height) * image.width;
     }
 
-    function canvasWidth(height) {
+    function canvasWidth(images, height) {
         return images.map(function(image) {
             return imageWidth(image, height);
         })
