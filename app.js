@@ -5,8 +5,6 @@
         L: 1800,
     };
     var canvasSize = 'M';
-    var canvas = $('#photos')[0];
-    var context = canvas.getContext('2d');
     var images = [];
 
     function setup() {
@@ -27,13 +25,14 @@
         });
 
         $('#download').on('click', function(event) {
-            $(this).attr('href', canvas.toDataURL('image/jpeg'));
+            $(this).attr('href', drawCanvas().toDataURL('image/jpeg'));
         });
 
         canvasSize = $('input[name=imageSize]:checked').val();
         $('input[name=imageSize]').on('click', function(event) {
             canvasSize = event.target.value;
-            draw();
+            $('#preview img').removeClass('S M L');
+            $('#preview img').addClass(canvasSize);
         });
     }
 
@@ -43,13 +42,16 @@
         reader.onload = function(event) {
             var image = new Image();
             image.src = event.target.result;
+            image.className = canvasSize;
             images.push(image);
-            draw();
+            $('#preview').append(image);
             stepNext();
         }
     }
 
-    function draw() {
+    function drawCanvas() {
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
         var canvasHeight = heights[canvasSize];
         canvas.height = canvasHeight;
         canvas.width = canvasWidth(canvasHeight);
@@ -59,6 +61,7 @@
             context.drawImage(image, posX, 0, width, canvasHeight);
             posX += width;
         });
+        return canvas;
     }
 
     function stepNext() {

@@ -50,10 +50,26 @@ footer a{
 
 /* 画像が見易くなるように高さを制限 */
 
-.preview{
+#preview{
     padding: 10px 20px;
     background: #ededed;
     border: 1px solid #ddd;
+    break-inside: avoid;
+}
+
+#preview .S {
+    width: auto;
+    height: 200px;
+}
+
+#preview .M {
+    width: auto;
+    height: 250px;
+}
+
+#preview .L {
+    width: auto;
+    height: 300px;
 }
 
 /* 描写部分 */
