@@ -25,7 +25,12 @@
         });
 
         $('#download').on('click', function(event) {
-            window.location.href =  drawCanvas().toDataURL('image/jpeg');
+            drawCanvas().toBlob(function(blob) {
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'maitsuki.jpg';
+                a.click();
+            }, 'image/jpeg');
         });
 
         canvasSize = $('input[name=imageSize]:checked').val();
