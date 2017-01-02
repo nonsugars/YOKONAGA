@@ -25,7 +25,7 @@
         });
 
         $('#download').on('click', function(event) {
-            $(this).attr('href', drawCanvas().toDataURL('image/jpeg'));
+            window.location.href =  drawCanvas().toDataURL('image/jpeg');
         });
 
         canvasSize = $('input[name=imageSize]:checked').val();
