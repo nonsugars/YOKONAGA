@@ -5,20 +5,20 @@
         L: 1800,
     };
     var canvasSize = 'M';
-    var canvas = document.getElementById('photos');
+    var canvas = $('#photos')[0];
     var context = canvas.getContext('2d');
     var images = [];
 
     function setup() {
-        document.body.addEventListener('dragover', function(event) {
-            event.dataTransfer.dropEffect = 'copy';
+        $('body').on('dragover', function(event) {
+            event.originalEvent.dataTransfer.dropEffect = 'copy';
             event.stopPropagation();
             event.preventDefault();
         });
-        document.body.addEventListener('drop', function(event) {
+        $('body').on('drop', function(event) {
             event.stopPropagation();
             event.preventDefault();
-            var files = [].slice.call(event.dataTransfer.files);
+            var files = [].slice.call(event.originalEvent.dataTransfer.files);
             files.forEach(function(file) {
                 if (file.type.match('image/.*')) {
                     readFile(file);
@@ -26,19 +26,14 @@
             });
         });
 
-        var downloadButton = document.getElementById('download');
-        downloadButton.addEventListener('click', function(event) {
-            downloadButton.href = canvas.toDataURL('image/jpeg');
+        $('#download').on('click', function(event) {
+            $(this).attr('href', canvas.toDataURL('image/jpeg'));
         });
 
-        document.configForm.imageSize.forEach(function(input) {
-            if (input.checked) {
-                canvasSize = input.value;
-            }
-            input.addEventListener('click', function(event) {
-                canvasSize = event.target.value;
-                draw();
-            });
+        canvasSize = $('input[name=imageSize]:checked').val();
+        $('input[name=imageSize]').on('click', function(event) {
+            canvasSize = event.target.value;
+            draw();
         });
     }
 
@@ -67,8 +62,8 @@
     }
 
     function stepNext() {
-        document.getElementById('firstStep').style.display = 'none';
-        document.getElementById('secondStep').style.display = 'block';
+        $('#firstStep').css('display', 'none');
+        $('#secondStep').css('display', 'block');
     }
 
     function imageWidth(image, height) {
