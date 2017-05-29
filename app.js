@@ -7,12 +7,12 @@
     var canvasSize = 'M';
 
     function setup() {
-        $('body').on('dragover', function(event) {
+        $('#firstStep').on('dragover', function(event) {
             event.originalEvent.dataTransfer.dropEffect = 'copy';
             event.stopPropagation();
             event.preventDefault();
         });
-        $('body').on('drop', function(event) {
+        $('#firstStep').on('drop', function(event) {
             event.stopPropagation();
             event.preventDefault();
             var files = [].slice.call(event.originalEvent.dataTransfer.files);
