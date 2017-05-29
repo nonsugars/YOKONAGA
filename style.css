@@ -13,7 +13,6 @@ html, body{
 }
 
 header,
-footer,
 main{
     width: 80%;
     margin: 0 auto;
@@ -31,6 +30,7 @@ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 100vh;
     padding: 10px;
     color: #FFF;
     background: #222;
@@ -46,6 +46,7 @@ footer a{
 
 #secondStep {
     display: none;
+    margin-bottom: 80px;
 }
 
 /* 画像が見易くなるように高さを制限 */
@@ -78,10 +79,18 @@ footer a{
     border: 1px solid #000;
 }
 
+#secondStep form{
+    display: flex;
+}
+
 label{
-    display: inline-block;
-    width: calc(30% - 5px);
+    flex: 1 1 auto;
     box-sizing: content-box;
+    margin-left: 10px;
+}
+
+label:first-child{
+    margin-left: 0;
 }
 
 #download{
@@ -99,6 +108,7 @@ label{
     padding: 6px 12px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
+    border: none;
 }
 
 .btn-border{
@@ -109,6 +119,10 @@ label{
 .btn-border:hover{
     background: #fff9c4;
     border: 1px solid #1e88e5;
+}
+
+.btn-large{
+    width: 100%;
 }
 
 .btn-blue{
