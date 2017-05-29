@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>MAITUSKI | Monthly Baby Photos Maker</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="jquery-ui.min.css">
     </head>
@@ -19,14 +20,13 @@
             <section id="secondStep">
                 <div id="preview"></div>
                 <form name="configForm">
-                    <label class="btn btn-border">S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
+                    <label class="btn btn-border checked">S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
                     <label class="btn btn-border">M<input type="radio" name="imageSize" value="M"/></label>
                     <label class="btn btn-border">L<input type="radio" name="imageSize" value="L"/></label>
                 </form>
                 <div>
-                    <button id="download" class="btn btn-blue btn-large">
-                        <img src="download.svg" alt="">
-                        <br> Download
+                    <button id="download" class="btn btn-black btn-large">
+                        <img src="download.svg" alt=""> Download
                     </button>
                 </div>
             </section>
@@ -39,5 +39,11 @@
         <script src="jquery-3.1.1.min.js"></script>
         <script src="jquery-ui.min.js"></script>
         <script src="app.js"></script>
+        <script type="text/javascript">
+            $('input[type="radio"]').on( "change", function(){
+                $('input[type="radio"]').parent().removeClass('checked');
+                $(this).parent().addClass('checked');
+            } )
+        </script>
     </body>
 </html>

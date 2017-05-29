@@ -5,6 +5,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* レイアウト */
@@ -95,6 +97,10 @@ label:first-child{
 
 #download{
     display: block;
+    margin: 36px 0 68px;
+    padding: 20px 36px;
+    font-size: 1em;
+    letter-spacing: .125em
 }
 
 #download img{
@@ -105,31 +111,37 @@ label:first-child{
 
 .btn{
     cursor: pointer;
-    padding: 6px 12px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    border: none;
-}
-
-.btn-border{
-    background: #FFF;
-    border: 1px solid #2196f3;
-}
-
-.btn-border:hover{
-    background: #fff9c4;
-    border: 1px solid #1e88e5;
+    padding: 20px 36px;
+    border: 2px solid;
 }
 
 .btn-large{
     width: 100%;
 }
 
-.btn-blue{
+.btn-border:hover{}
+
+.btn-black{
     color: #FFF;
-    background: #42a5f5;
+    background: rgb(23, 44, 59);
 }
 
-.btn-blue:hover{
-    background: #64B5F6;
+.btn-black:hover{
+    background: #222;
+}
+
+/* --- */
+
+label{
+    position: relative;
+}
+
+input[type="radio"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.checked{
+    color: #FFF;
+    background-color: rgb(23, 44, 59);
 }
