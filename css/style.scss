@@ -1,3 +1,10 @@
+/* === 色 === */
+$text-color: #EFB6AE;
+$btn-color: #363334;
+$box-color: #424041;
+$scrollbar-color: #363334;
+$border-color: #4a4849;
+
 /* === コンポーネント === */
 
 /* テキスト */
@@ -14,11 +21,12 @@ address{
 /* ボタン */
 
 .btn{
-    color: #086459;
+    color: $text-color;
     cursor: pointer;
     padding: 20px 36px;
-    background: #99DCD3;
-    border: 2px solid #FFF;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
     small{
         display: block;
         font-size: .6em;
@@ -32,7 +40,7 @@ address{
 
 .btn-black,
 .checked{
-    background: #FFF;
+    background: $btn-color;
 }
 
 
@@ -56,24 +64,31 @@ input[type="radio"]{
 .scroll::-webkit-scrollbar {
     width: 5px;
     height: 8px;
-    background-color: #99DCD3;
+    background-color: $box-color;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background: #59C2B5;
+    background: $scrollbar-color;
     border-radius: 4px;
 }
-
 
 /* ======================== */
 
 /* レイアウト */
 html,
 body{
+    height: 100%;
     text-align: center;
+    color: $box-color;
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
-    background: #59C3B6;
+    background-size: cover;
+
+    // gradient
+    background: #d9a7c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 header,
@@ -83,12 +98,12 @@ main{
 }
 
 header{
-        h1{
-            small{
-                display: block;
-                font-size: .3em;
-            }
+    h1{
+        small{
+            display: block;
+            font-size: .3em;
         }
+    }
 }
 
 /* main */
@@ -108,7 +123,8 @@ footer{
     width: 100%;
     margin-top: 100vh;
     padding: 10px;
-    color: #000;
+    color: $box-color;
+    font-size: .8em;
     background: #FFF;
     a{
         color: #000;
@@ -119,6 +135,19 @@ footer{
 
 /* ステップ */
 
+#firstStep,
+#secondStep{
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba($box-color, 0.2),
+                0 1px 2px rgba($box-color, 0.2);
+
+    &:hover{
+        box-shadow: 0 14px 28px rgba($box-color, 0.6),
+                    0 10px 10px rgba($box-color, 0.6);
+    }
+}
+
 #firstStep{
     display: flex;
     align-items: center;
@@ -126,14 +155,9 @@ footer{
     margin: 0 auto;
     width: 100%;
     height: 70vh;
-    background:#9DDCD4 url('../images/bg-dragarea.svg') center center no-repeat;
+    background: url('../images/bg-dragarea.svg') center center no-repeat;
+    background-color: $box-color;
     background-size: 50% 50%;
-    box-shadow: 0 1px 3px rgba(57,152,140,0.12), 0 1px 2px rgba(57,152,140,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-    &:hover{
-        box-shadow: 0 14px 28px rgba(57,152,140,0.25), 0 10px 10px rgba(57,152,140,0.22);
-    }
 
     p{
         display: none;
@@ -148,7 +172,8 @@ footer{
     justify-content: flex-end;
     height: 70vh;
     padding: 10px 20px;
-    background: #9DDCD4;
+    border-radius: 10px;
+    background-color:$box-color;
 
     #preview{
         display: flex;
@@ -156,7 +181,8 @@ footer{
         align-items: center;
         break-inside: avoid;
         padding: 0px 20px;
-        border: 2px dotted #FFF;
+        border-radius: 10px;
+        border: 1px solid $border-color;
 
         img{
             /* 画像が見易くなるように高さを制限 */
@@ -204,8 +230,13 @@ footer{
             padding: 20px 36px;
             font-size: 1em;
 
-            img{
-                width: 1.6em;
+            .svg-entity{
+                display: none;
+            }
+            .svg-controlwithcss{
+                .icon-download-item{
+                    fill: $text-color;
+                }
             }
         }
     }
