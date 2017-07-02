@@ -19,23 +19,22 @@ address{
     padding: 20px 36px;
     background: #99DCD3;
     border: 2px solid #FFF;
-}
-
-.btn small{
-    display: block;
-    font-size: .6em;
-    margin-top: 2px;
+    small{
+        display: block;
+        font-size: .6em;
+        margin-top: 2px;
+    }
 }
 
 .btn-large{
     width: 100%;
 }
 
-.btn-black, .checked{
+.btn-black,
+.checked{
     background: #FFF;
 }
 
-.btn-black:hover{}
 
 /* フォームコントローラ */
 
@@ -68,21 +67,13 @@ input[type="radio"]{
 
 /* ======================== */
 
-/*ドロップ可能範囲*/
-
-html, body {
-    width: 100%;
-    height: calc(100vh - 50px);
-    margin: 0;
-    padding: 0;
+/* レイアウト */
+html,
+body{
+    text-align: center;
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
     background: #59C3B6;
-}
-
-/* レイアウト */
-html, body{
-    text-align: center;
 }
 
 header,
@@ -91,32 +82,40 @@ main{
     margin: 0 auto;
 }
 
-header h1 small{
-    display: block;
-    font-size: .3em;
+header{
+        h1{
+            small{
+                display: block;
+                font-size: .3em;
+            }
+        }
 }
 
 /* main */
 
-main * {
-    margin-top: 10px;
+main{
+    * {
+        margin-top: 10px;
+    }
 }
 
 /* footer */
 
 footer{
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
     margin-top: 100vh;
     padding: 10px;
     color: #000;
     background: #FFF;
+    a{
+        color: #000;
+    }
 }
 
-footer a{
-    color: #000;
-}
+
 
 /* ステップ */
 
@@ -127,78 +126,75 @@ footer a{
     margin: 0 auto;
     width: 100%;
     height: 70vh;
-    background:#9DDCD4 url('bg-dragarea.svg') center center no-repeat;
+    background:#9DDCD4 url('../images/bg-dragarea.svg') center center no-repeat;
     background-size: 50% 50%;
     box-shadow: 0 1px 3px rgba(57,152,140,0.12), 0 1px 2px rgba(57,152,140,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:hover{
+        box-shadow: 0 14px 28px rgba(57,152,140,0.25), 0 10px 10px rgba(57,152,140,0.22);
+    }
+
+    p{
+        display: none;
+        font-size: 1.6em;
+    }
 }
 
-#firstStep:hover{
-    box-shadow: 0 14px 28px rgba(57,152,140,0.25), 0 10px 10px rgba(57,152,140,0.22);
-}
-
-#firstStep p{
-    display: none;
-    font-size: 1.6em;
-}
 
 #secondStep {
-    display: flex;
+    display: none;
     height: 70vh;
     padding: 10px 20px;
     background: #9DDCD4;
-}
 
-/* 画像が見易くなるように高さを制限 */
+    #preview{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        break-inside: avoid;
+        padding: 0px 20px;
+        border: 2px dotted #FFF;
 
-#preview{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    break-inside: avoid;
-    padding: 0px 20px;
-    border: 2px dotted #FFF;
-}
+        img{
+            /* 画像が見易くなるように高さを制限 */
+            width: auto;
+            height: 200px;
+        }
+    }
 
-#preview img {
-    width: auto;
-    height: 200px;
+    form{
+        display: flex;
+
+        label{
+            flex: 1 1 auto;
+            box-sizing: content-box;
+            margin-left: 10px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+
+    #download{
+        display: block;
+        margin: 18px 0px 16px;
+        padding: 20px 36px;
+        font-size: 1em;
+
+        img{
+            width: 1.6em;
+        }
+    }
 }
 
 .ui-sortable-helper{
+    /* ドラッグ時の見た目 */
     border: 10px solid #FFF;
-
+    transform:rotate(-10deg);
     /* box-shadow */
     box-shadow:0px 2px 15px 2px rgba(0,0,0,0.18);
     -moz-box-shadow:0px 2px 15px 2px rgba(0,0,0,0.18);
     -webkit-box-shadow:0px 2px 15px 2px rgba(0,0,0,0.18);
-
-    transform:rotate(-10deg);
-}
-
-/* 描写部分 */
-#secondStep form{
-    display: flex;
-}
-
-label{
-    flex: 1 1 auto;
-    box-sizing: content-box;
-    margin-left: 10px;
-}
-
-label:first-child{
-    margin-left: 0;
-}
-
-#download{
-    display: block;
-    margin: 18px 0px 16px;
-    padding: 20px 36px;
-    font-size: 1em;
-    letter-spacing: .125em
-}
-
-#download img{
-    width: 1.6em;
 }
