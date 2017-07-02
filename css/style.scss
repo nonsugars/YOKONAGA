@@ -144,14 +144,16 @@ footer{
 
 #secondStep {
     display: none;
+    flex-flow: column;
+    justify-content: flex-end;
     height: 70vh;
     padding: 10px 20px;
     background: #9DDCD4;
 
     #preview{
         display: flex;
+        flex: auto;
         align-items: center;
-        justify-content: center;
         break-inside: avoid;
         padding: 0px 20px;
         border: 2px dotted #FFF;
@@ -160,6 +162,9 @@ footer{
             /* 画像が見易くなるように高さを制限 */
             width: auto;
             height: 200px;
+
+            // スクロールバーとの隙間確保
+            margin-bottom: 10px;
         }
     }
 
@@ -175,16 +180,33 @@ footer{
                 margin-left: 0;
             }
         }
+
+        // 画面が狭いとき
+        @media (max-width: 570px) {
+            display: block;
+
+            label{
+                flex: none;
+                display: block;
+                margin-left: auto;
+
+                &:first-child{
+                    margin-left: auto;
+                }
+            }
+        }
     }
 
-    #download{
-        display: block;
-        margin: 18px 0px 16px;
-        padding: 20px 36px;
-        font-size: 1em;
+    .download{
+        #download{
+            display: block;
+            margin: 18px 0px 16px;
+            padding: 20px 36px;
+            font-size: 1em;
 
-        img{
-            width: 1.6em;
+            img{
+                width: 1.6em;
+            }
         }
     }
 }

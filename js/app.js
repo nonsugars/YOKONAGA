@@ -72,7 +72,7 @@
 
     function stepNext() {
         $('#firstStep').css('display', 'none');
-        $('#secondStep').css('display', 'block');
+        $('#secondStep').css('display', 'flex');
     }
 
     function imageWidth(image, height) {

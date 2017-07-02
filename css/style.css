@@ -105,20 +105,23 @@ footer {
 
 #secondStep {
   display: none;
+  flex-flow: column;
+  justify-content: flex-end;
   height: 70vh;
   padding: 10px 20px;
   background: #9DDCD4; }
   #secondStep #preview {
     display: flex;
+    flex: auto;
     align-items: center;
-    justify-content: center;
     break-inside: avoid;
     padding: 0px 20px;
     border: 2px dotted #FFF; }
     #secondStep #preview img {
       /* 画像が見易くなるように高さを制限 */
       width: auto;
-      height: 200px; }
+      height: 200px;
+      margin-bottom: 10px; }
   #secondStep form {
     display: flex; }
     #secondStep form label {
@@ -127,12 +130,21 @@ footer {
       margin-left: 10px; }
       #secondStep form label:first-child {
         margin-left: 0; }
-  #secondStep #download {
+    @media (max-width: 570px) {
+      #secondStep form {
+        display: block; }
+        #secondStep form label {
+          flex: none;
+          display: block;
+          margin-left: auto; }
+          #secondStep form label:first-child {
+            margin-left: auto; } }
+  #secondStep .download #download {
     display: block;
     margin: 18px 0px 16px;
     padding: 20px 36px;
     font-size: 1em; }
-    #secondStep #download img {
+    #secondStep .download #download img {
       width: 1.6em; }
 
 .ui-sortable-helper {
