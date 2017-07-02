@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <h1>MAITSUKI <small>Monthly Baby Photos Maker</small></h1>
+            <h1>YOKONAGA<small>Connect photos to the side</small></h1>
         </header>
         <main>
             <section id="firstStep" class="uppercase">
@@ -20,13 +20,13 @@
                 <NOBR>
             </section>
             <section id="secondStep">
-                <div id="preview"></div>
+                <div id="preview" class="scroll"></div>
                 <form name="configForm">
-                    <label class="btn btn-border checked">S<input type="radio" name="imageSize" value="S" checked="checked"/></label>
-                    <label class="btn btn-border">M<input type="radio" name="imageSize" value="M"/></label>
-                    <label class="btn btn-border">L<input type="radio" name="imageSize" value="L"/></label>
+                    <label class="btn btn-border checked">S <small>(H 600px)</small><input type="radio" name="imageSize" value="S" checked="checked"/></label>
+                    <label class="btn btn-border">M <small>(H 1000px)</small><input type="radio" name="imageSize" value="M"/></label>
+                    <label class="btn btn-border">L <small>(H 1800px)</small><input type="radio" name="imageSize" value="L"/></label>
                 </form>
-                <div>
+                <div class="download">
                     <button id="download" class="btn btn-black btn-large">
                         <img src="download.svg" alt=""> Download
                     </button>
@@ -35,7 +35,7 @@
         </main>
         <footer>
             <address>
-                &copy 2017 <a href="mailto:info@example.com">wolfgang</a>
+                &copy 2017 <a href="mailto:info@example.com">sugar-sweeper</a>
             </address>
         </footer>
         <script src="jquery-3.1.1.min.js"></script>

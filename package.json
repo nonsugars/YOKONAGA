@@ -1,0 +1,27 @@
+
+{
+    "name": "maitsuki",
+    "version": "1.0.0",
+    "description": "Connect photos to the side",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sugar-sweepers/maitsuki.git"
+    },
+    "author": "tai2, woopsdez",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sugar-sweepers/maitsuki/issues"
+    },
+    "homepage": "https://github.com/sugar-sweepers/maitsuki#readme",
+    "devDependencies": {
+        "node-sass": "^4.5.3"
+    },
+    "scripts": {
+        "start":      "node-sass css/style.scss css/style.css -w",
+        "production": ""
+    },
+}
