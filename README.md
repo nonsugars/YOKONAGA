@@ -4,7 +4,7 @@
 ドラッグした画像を横につなげてダウンロードできます。
 
 ## 使い方
-[YOKONAGA | 写真を横に結合するだけのシンプルサービス on Youtube](https://www.youtube.com/embed/XS9SVNNtvxA?ecver=1)
+[![YOKONAGA | 写真を横に結合するだけのシンプルサービス on Youtube](http://img.youtube.com/vi/XS9SVNNtvxA/0.jpg)](http://www.youtube.com/watch?v=XS9SVNNtvxA)
 
 ## 実装予定
 1. プレビュー時に写真の追加と削除ができるように
